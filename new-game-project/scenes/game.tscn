@@ -150,6 +150,14 @@ texture = ExtResource("2_yqjtg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
+[sub_resource type="Animation" id="Animation_lnu2h"]
+resource_name = "move"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lbhrr"]
+_data = {
+&"move": SubResource("Animation_lnu2h")
+}
+
 [node name="Game" type="Node2D" unique_id=2029875870]
 position = Vector2(161, 112)
 
@@ -170,6 +178,9 @@ layer_0/tile_data = PackedInt32Array(131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 1
 
 [node name="Platform" parent="." unique_id=1297796019 instance=ExtResource("3_lnu2h")]
 position = Vector2(219, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform" unique_id=1138145416]
+libraries/ = SubResource("AnimationLibrary_lbhrr")
 
 [node name="Platform2" parent="." unique_id=913875126 instance=ExtResource("3_lnu2h")]
 position = Vector2(3, -31)
